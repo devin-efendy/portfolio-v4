@@ -1,7 +1,8 @@
-import { Center } from "@chakra-ui/react";
+import { Center, Container } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { About, WorkExperience } from "../components";
 
 const Home: NextPage = () => {
   return (
@@ -13,10 +14,11 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={"main"}>
-        <Center>Hi, I'm Devin!</Center>
+        <About />
+        {/* <WorkExperience /> */}
       </main>
 
-      <footer>
+      {/* <footer>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
@@ -27,7 +29,7 @@ const Home: NextPage = () => {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
-      </footer>
+      </footer> */}
     </div>
   );
 };
