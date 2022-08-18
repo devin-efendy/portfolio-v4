@@ -1,10 +1,23 @@
-import { Center, Container } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import { About, WorkExperience } from "../components";
+import experienceData from "../../data/experience";
+import { IExperience } from "../types";
 
-const Home: NextPage = () => {
+
+export async function getStaticProps() {
+  return {
+    props: {
+      experience: experienceData,
+    },
+  };
+}
+
+interface Props {
+  experience: Array<IExperience>
+}
+
+const Home: NextPage<Props> = ({ experience }) => {
   return (
     <div className={"container"}>
       <Head>
@@ -15,7 +28,7 @@ const Home: NextPage = () => {
 
       <main className={"main"}>
         <About />
-        {/* <WorkExperience /> */}
+        <WorkExperience experience={experience}/>
       </main>
 
       {/* <footer>

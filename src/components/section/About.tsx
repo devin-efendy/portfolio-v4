@@ -10,11 +10,11 @@ import {
 
 const About = () => {
   return (
-    <Box className={"profile--section"} my={"120px"} mx={"30px"}>
+    <Box className={"profile--section"} my={"150px"} mx={"30px"}>
       <Center flexDirection={["column", null, null, null, "row"]}>
-        <Flex direction={"column"} maxWidth={"500px"}>
+        <Flex direction={"column"} maxWidth={"600px"}>
           <Heading as={"h1"} mb={"24px"}>
-          👋 Hi, I'm Devin Efendy!
+            👋 Hi, I&apos;m Devin Efendy!
           </Heading>
           <Heading
             mb={"36px"}
@@ -26,10 +26,13 @@ const About = () => {
             Software Engineer
           </Heading>
           <Text as={"p"} color={"gray.700"} mb={"3rem"} textAlign={"justify"}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            I'm a final year Computer Science HonoursCo-op student at the
+            University of Manitoba and will be graduating in December 2022. I
+            am very passionate about tech and I like to build things with it.
+            Through multiple co-op terms, I gained industry experience in
+            building web applications and using technologies such as Next.js,
+            React, Node, TypeScript, SQL, Docker, Jest, and React Testing
+            Library. My areas of interest are front-end development, distributed
           </Text>
           <Button id="contact-me--button" width={"130px"}>
             Contact me
@@ -45,6 +48,7 @@ const About = () => {
             borderWidth={"7px"}
           >
             <Image
+              alt="Devin Efendy profile image"
               boxSize={["250px", null, null, "300px"]}
               borderRadius={"full"}
               src="/static/about-img-sqr.png"
