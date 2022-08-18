@@ -12,8 +12,8 @@ export async function getStaticProps() {
 
 const Home: NextPage = () => {
   return (
-    <div className={'container'}>
-      <main className={'main'}>
+    <div className='container'>
+      <main className='main'>
         <About />
       </main>
 

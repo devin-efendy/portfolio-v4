@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Devin Efendy</title>
-        <meta name="description" content="Devin Efendy Portfolio" />
+        <meta name='description' content='Devin Efendy Portfolio' />
       </Head>
       <ChakraProvider theme={theme}>
         <Component {...pageProps} />

@@ -19,12 +19,12 @@ interface Props {
 
 const Home: NextPage<Props> = ({ experience }) => {
   return (
-    <div className={'container'}>
+    <div className='container'>
       <Head>
         <title>Resume</title>
-        <meta name="description" content="Devin Efendy Resume" />
+        <meta name='description' content='Devin Efendy Resume' />
       </Head>
-      <main className={'main'}>
+      <main className='main'>
         <Education />
         <WorkExperience experience={experience} />
       </main>

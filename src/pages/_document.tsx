@@ -4,8 +4,8 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <meta name="description" content="Devin Efendy Portfolio" />
-        <link rel="icon" href={'/favicon.png'} />
+        <meta name='description' content='Devin Efendy Portfolio' />
+        <link rel='icon' href='/favicon.png' />
       </Head>
       <body>
         <Main />
