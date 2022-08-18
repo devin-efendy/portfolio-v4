@@ -11,7 +11,7 @@ const Experience = ({
 }: ExperienceProps) => {
   return (
     <Box>
-      <Box className={"experience"} px={[3, 5]} py={"30px"}>
+      <Box className={"experience"} px={[3, 5]} py={"20px"}>
         <Flex fontSize={"xl"} flexDirection={["column", "row"]}>
           <Text fontWeight={"bold"}>{position}</Text>
           <Text fontWeight={"bold"} mx={[0, 2]} display={["none", "flex"]}>

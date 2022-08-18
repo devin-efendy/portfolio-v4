@@ -3,7 +3,7 @@ import Head from "next/head";
 import { About, WorkExperience } from "../components";
 import experienceData from "../../data/experience";
 import { IExperience } from "../types";
-
+import Education from "../components/section/Education";
 
 export async function getStaticProps() {
   return {
@@ -14,7 +14,7 @@ export async function getStaticProps() {
 }
 
 interface Props {
-  experience: Array<IExperience>
+  experience: Array<IExperience>;
 }
 
 const Home: NextPage<Props> = ({ experience }) => {
@@ -28,7 +28,8 @@ const Home: NextPage<Props> = ({ experience }) => {
 
       <main className={"main"}>
         <About />
-        <WorkExperience experience={experience}/>
+        <Education />
+        <WorkExperience experience={experience} />
       </main>
 
       {/* <footer>
