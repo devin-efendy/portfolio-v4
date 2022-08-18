@@ -1,9 +1,9 @@
-import { IExperience } from "../../types";
-import SectionWrapper from "../layout/SectionWrapper";
-import Experience from "../molecules/Experience";
+import { IExperience } from '../../types'
+import SectionWrapper from '../layout/SectionWrapper'
+import Experience from '../molecules/Experience'
 
 interface Props {
-  experience: Array<IExperience>;
+  experience: Array<IExperience>
 }
 const WorkExperience = ({ experience }: Props) => {
   return (
@@ -12,7 +12,7 @@ const WorkExperience = ({ experience }: Props) => {
         <Experience key={exp.id} {...exp} />
       ))}
     </SectionWrapper>
-  );
-};
+  )
+}
 
-export default WorkExperience;
+export default WorkExperience

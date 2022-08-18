@@ -6,7 +6,7 @@
     "build": "next build && next export",
     "start": "next start",
     "lint": "eslint --fix ./src",
-    "prettier": "prettier"
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@chakra-ui/react": "^2.2.6",

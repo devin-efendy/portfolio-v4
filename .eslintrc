@@ -1,12 +1,6 @@
 {
-  "extends": [
-    "next",
-    "next/core-web-vitals",
-    "prettier"
-  ],
-  "plugins": [
-    "unused-imports"
-  ],
+  "extends": ["next", "next/core-web-vitals", "prettier"],
+  "plugins": ["unused-imports"],
   "rules": {
     "@next/next/no-img-element": "off",
     "no-unused-vars": "off",
