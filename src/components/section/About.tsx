@@ -92,7 +92,7 @@ const About = () => {
             alt="Devin Efendy profile image"
             boxSize={"300px"}
             borderRadius={"full"}
-            src="/static/about-img-sqr.png"
+            src="/about-img-sqr.png"
           />
         </Box>
       </Center>
