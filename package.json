@@ -6,7 +6,7 @@
     "build": "next build && next export",
     "start": "next start",
     "lint": "eslint --fix ./src",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write data/ src/ package.json .eslintrc .prettierrc tsconfig.json next.config.js"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.2.6",
