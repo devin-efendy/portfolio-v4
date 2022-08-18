@@ -21,11 +21,9 @@ const Home: NextPage<Props> = ({ experience }) => {
   return (
     <div className={"container"}>
       <Head>
-        <title>Devin Efendy - Resume</title>
-        <meta name="description" content="Devin Efendy Portfolio" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Resume</title>
+        <meta name="description" content="Devin Efendy Resume" />
       </Head>
-
       <main className={"main"}>
         <Education />
         <WorkExperience experience={experience} />

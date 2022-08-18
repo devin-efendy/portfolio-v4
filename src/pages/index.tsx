@@ -21,12 +21,6 @@ interface Props {
 const Home: NextPage<Props> = ({ experience }) => {
   return (
     <div className={"container"}>
-      <Head>
-        <title>Devin Efendy</title>
-        <meta name="description" content="Devin Efendy Portfolio" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className={"main"}>
         <About />
       </main>
