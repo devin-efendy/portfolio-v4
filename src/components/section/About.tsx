@@ -39,7 +39,7 @@ const About = () => {
           Software Developer
         </Heading>
         <Text as={"p"} color={"gray.700"} mb={"3rem"} textAlign={"justify"}>
-          I'm a final year Computer Science Honours (Co-op) student at the
+          I&apos;m a final year Computer Science Honours (Co-op) student at the
           University of Manitoba and will be graduating in December 2022. I am
           very passionate about tech and I like to build things with it. Through
           multiple co-op terms, I gained industry experience in building full-stack web
