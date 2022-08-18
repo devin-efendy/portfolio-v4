@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Divider, Flex, Text } from "@chakra-ui/react";
 import { IExperience as ExperienceProps } from "../../types";
 
 const Experience = ({

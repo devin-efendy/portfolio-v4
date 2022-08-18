@@ -1,10 +1,7 @@
 import {
   Box,
-  Divider,
   Flex,
-  ListItem,
   Text,
-  UnorderedList,
 } from "@chakra-ui/react";
 import SectionWrapper from "../layout/SectionWrapper";
 

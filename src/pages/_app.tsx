@@ -1,8 +1,6 @@
 import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../theme";
-
-import favicon from '../../public/favicon.png'
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {

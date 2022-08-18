@@ -1,10 +1,6 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import { About } from "../components";
 import experienceData from "../../data/experience";
-import { IExperience } from "../types";
-import Education from "../components/section/Education";
-import { Center } from "@chakra-ui/react";
 
 export async function getStaticProps() {
   return {
@@ -14,11 +10,7 @@ export async function getStaticProps() {
   };
 }
 
-interface Props {
-  experience: Array<IExperience>;
-}
-
-const Home: NextPage<Props> = ({ experience }) => {
+const Home: NextPage = () => {
   return (
     <div className={"container"}>
       <main className={"main"}>

@@ -1,13 +1,13 @@
 import {
   Box,
+  Button,
   Center,
   Flex,
   Heading,
-  Text,
-  Image,
-  Button,
   Icon,
+  Image,
   Link,
+  Text,
 } from "@chakra-ui/react";
 
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
