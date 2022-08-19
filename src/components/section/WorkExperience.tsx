@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react'
 import { IExperience } from '../../types'
 import SectionWrapper from '../layout/SectionWrapper'
 import Experience from '../molecules/Experience'
@@ -14,7 +15,9 @@ const WorkExperience = ({ experience }: Props) => {
       titleColor='blue.600'
     >
       {experience.map((exp) => (
-        <Experience key={exp.id} {...exp} />
+        <Box key={exp.id} pb='30px'>
+          <Experience {...exp} />
+        </Box>
       ))}
     </SectionWrapper>
   )

@@ -25,22 +25,20 @@ const Skills = () => {
       emoji='👨‍💻'
       titleColor='purple.500'
     >
-      <Box px={[3, 5]} py='30px'>
-        <Flex flexDirection='column' mt={5} gap={3}>
-          <SkillCategory
-            category='Languages'
-            content='JavaScript, TypeScript, Java, Python, C, C#, HTML, CSS, MySQL, PostgreSQL'
-          />
-          <SkillCategory
-            category='Frameworks'
-            content='React, Node.js, GraphQL, Express, Next.js, Remix, .NET/Core'
-          />
-          <SkillCategory
-            category='Developer Tools'
-            content='Git, GitLab, Docker, AWS (Amplify, S3), Azure DevOps, Storybook, Okta, Jira, Unix'
-          />
-        </Flex>
-      </Box>
+      <Flex flexDirection='column' gap={3}>
+        <SkillCategory
+          category='Languages'
+          content='JavaScript, TypeScript, Java, Python, C, C#, HTML, CSS, MySQL, PostgreSQL'
+        />
+        <SkillCategory
+          category='Frameworks'
+          content='React, Node.js, GraphQL, Express, Next.js, Remix, .NET/Core'
+        />
+        <SkillCategory
+          category='Developer Tools'
+          content='Git, GitLab, Docker, AWS (Amplify, S3), Azure DevOps, Storybook, Okta, Jira, Unix'
+        />
+      </Flex>
     </SectionWrapper>
   )
 }

@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name='description' content='Devin Efendy Portfolio' />
       </Head>
       <ChakraProvider theme={theme}>
-        <Box bg='gray.50'>
+        <Box bg='gray.100'>
           <Component {...pageProps} />
         </Box>
       </ChakraProvider>
