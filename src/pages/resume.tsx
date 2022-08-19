@@ -1,16 +1,15 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { WorkExperience } from '../components'
-import experienceData from '../../data/experience'
-import { IExperience } from '../types'
-import Education from '../components/section/Education'
-import Skills from '../components/section/Skills'
+import { Education, Projects, Skills, WorkExperience } from '../components'
+import { experienceData, projectsData } from '../../data'
+import { IExperience, IProject } from '../types'
 import { Box, Button, Center, Flex, Icon } from '@chakra-ui/react'
 import { MdArrowBack } from 'react-icons/md'
 import { useRouter } from 'next/router'
 
 interface Props {
   experience: Array<IExperience>
+  projects: Array<IProject>
 }
 
 const ResumeNavigation = ({ router }: any) => {
@@ -36,11 +35,12 @@ export async function getStaticProps() {
   return {
     props: {
       experience: experienceData,
+      projects: projectsData,
     },
   }
 }
 
-const Home: NextPage<Props> = ({ experience }) => {
+const Home: NextPage<Props> = ({ experience, projects }) => {
   const router = useRouter()
   return (
     <Box className='resume--section' py='100px'>
@@ -53,6 +53,7 @@ const Home: NextPage<Props> = ({ experience }) => {
         <Education />
         <Skills />
         <WorkExperience experience={experience} />
+        <Projects projects={projects} />
         <ResumeNavigation router={router} />
       </main>
     </Box>

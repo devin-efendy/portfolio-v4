@@ -15,7 +15,7 @@ const WorkExperience = ({ experience }: Props) => {
       titleColor='blue.600'
     >
       {experience.map((exp) => (
-        <Box key={exp.id} pb='30px'>
+        <Box key={exp.id} mt='15px'>
           <Experience {...exp} />
         </Box>
       ))}
