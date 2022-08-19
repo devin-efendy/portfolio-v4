@@ -48,7 +48,7 @@ const Education = () => {
         </Flex>
 
         <Flex flexDirection='column' mt={5} gap={3}>
-          <EducationItem emoji='📈' category='GPA' content='4.11 / 4.25' />
+          <EducationItem emoji='📈' category='GPA' content='4.11 / 4.5' />
           <EducationItem
             emoji='🏆'
             category='Awards'
