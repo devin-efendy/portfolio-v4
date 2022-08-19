@@ -18,6 +18,8 @@ import { useRouter } from 'next/router'
 const About = () => {
   const router = useRouter()
 
+  const buttonVariant = 'outline'
+
   return (
     <Center
       className='profile--section'
@@ -47,14 +49,32 @@ const About = () => {
           DevOps, and distributed systems.
         </Text>
         <Flex gap={3} wrap='wrap'>
-          <Link href='https://github.com/devin-efendy' isExternal>
-            <Button id='github--button' colorScheme='gray'>
-              <Icon as={FaGithub} w={5} h={5} />
+          <Link
+            href='https://github.com/devin-efendy'
+            isExternal
+            _hover={{ textDecoration: 'none' }}
+          >
+            <Button
+              id='github--button'
+              colorScheme='purple'
+              variant={buttonVariant}
+              leftIcon={<Icon as={FaGithub} w={5} h={5} />}
+            >
+              GitHub
             </Button>
           </Link>
-          <Link href='https://www.linkedin.com/in/devinefendy/' isExternal>
-            <Button id='linkedin--button' colorScheme='linkedin'>
-              <Icon as={FaLinkedinIn} w={5} h={5} />
+          <Link
+            href='https://www.linkedin.com/in/devinefendy/'
+            isExternal
+            _hover={{ textDecoration: 'none' }}
+          >
+            <Button
+              id='linkedin--button'
+              colorScheme='linkedin'
+              variant={buttonVariant}
+              leftIcon={<Icon as={FaLinkedinIn} w={5} h={5} />}
+            >
+              LinkedIn
             </Button>
           </Link>
           <Link
@@ -63,8 +83,9 @@ const About = () => {
           >
             <Button
               id='contact-me--button'
-              colorScheme='purple'
+              colorScheme='yellow'
               leftIcon={<Icon as={MdEmail} w={5} h={5} />}
+              variant={buttonVariant}
             >
               Contact
             </Button>
@@ -74,6 +95,7 @@ const About = () => {
             colorScheme='teal'
             leftIcon={<Icon as={IoIosPaper} w={5} h={5} />}
             onClick={() => router.push('/resume')}
+            variant={buttonVariant}
           >
             Resume
           </Button>
