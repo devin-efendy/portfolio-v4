@@ -20,8 +20,13 @@ const EducationItem = ({ emoji, category, content }: IEducationItem) => {
 
 const Education = () => {
   return (
-    <SectionWrapper title='Education 🎓' titleColor='teal.500'>
-      <Box className='experience' px={[3, 5]} py='30px'>
+    <SectionWrapper
+      id='education--section'
+      title='Education'
+      emoji='🎓'
+      titleColor='teal.500'
+    >
+      <Box px={[3, 5]} py='30px'>
         <Text fontSize='2xl' fontWeight='bold'>
           Bachelor of Computer Science Honours (Co-op)
         </Text>

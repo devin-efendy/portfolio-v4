@@ -2,6 +2,7 @@ import { Box, Divider, Flex, Text } from '@chakra-ui/react'
 import { IExperience as ExperienceProps } from '../../types'
 
 const Experience = ({
+  id,
   position,
   companyName,
   date,
@@ -10,8 +11,8 @@ const Experience = ({
   technologies,
 }: ExperienceProps) => {
   return (
-    <Box>
-      <Box className='experience' px={[3, 5]} py='20px'>
+    <Box id={id}>
+      <Box px={[3, 5]} py='20px'>
         <Flex fontSize='xl' flexDirection={['column', 'row']}>
           <Text fontWeight='bold'>{position}</Text>
           <Text fontWeight='bold' mx={[0, 2]} display={['none', 'flex']}>

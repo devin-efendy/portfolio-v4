@@ -19,8 +19,13 @@ const SkillCategory = ({ category, content }: IEducationItem) => {
 
 const Skills = () => {
   return (
-    <SectionWrapper title='Technical Skills 👨‍💻' titleColor='purple.500'>
-      <Box className='technical-skills' px={[3, 5]} py='30px'>
+    <SectionWrapper
+      id='technical-skills--section'
+      title='Technical Skills'
+      emoji='👨‍💻'
+      titleColor='purple.500'
+    >
+      <Box px={[3, 5]} py='30px'>
         <Flex flexDirection='column' mt={5} gap={3}>
           <SkillCategory
             category='Languages'
