@@ -7,3 +7,31 @@ export interface IExperience {
   location: string
   technologies: string
 }
+
+export interface IProject {
+  id: string
+  projectName: string
+  description: string
+  technologies: string
+}
+
+export interface IEducationItem {
+  emoji?: string
+  category: string
+  content: string
+}
+
+export interface IEducation {
+  university: string
+  degree: string
+  items: Array<IEducationItem>
+}
+
+export interface ISkill {
+  category: string
+  content: string
+}
+
+export interface ITechnicalSkills {
+  items: Array<ISkill>
+}

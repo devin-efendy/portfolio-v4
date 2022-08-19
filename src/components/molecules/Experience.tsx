@@ -27,7 +27,7 @@ const Experience = ({
           <Text ml={[0, 2]}>📍{location}</Text>
         </Flex>
 
-        <Text as='p' my={6}>
+        <Text as='p' my={6} textAlign='justify'>
           {description}
         </Text>
 

@@ -7,7 +7,7 @@ interface Props {
 }
 const WorkExperience = ({ experience }: Props) => {
   return (
-    <SectionWrapper title='Work Experience 👔'>
+    <SectionWrapper title='Work Experience 👔' titleColor='blue.600'>
       {experience.map((exp) => (
         <Experience key={exp.id} {...exp} />
       ))}

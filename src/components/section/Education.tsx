@@ -20,13 +20,17 @@ const EducationItem = ({ emoji, category, content }: IEducationItem) => {
 
 const Education = () => {
   return (
-    <SectionWrapper title='Education 🎓'>
+    <SectionWrapper title='Education 🎓' titleColor='teal.500'>
       <Box className='experience' px={[3, 5]} py='30px'>
         <Text fontSize='2xl' fontWeight='bold'>
           Bachelor of Computer Science Honours (Co-op)
         </Text>
 
-        <Flex fontSize='xl' flexDirection={['column', 'row']}>
+        <Flex
+          fontSize='xl'
+          flexDirection={['column', 'row']}
+          textAlign='justify'
+        >
           <Text color='gray.500' fontWeight='semibold'>
             University of Manitoba
           </Text>
