@@ -6,6 +6,7 @@ import { IExperience, IProject } from '../types'
 import { Box, Button, Center, Flex, Icon } from '@chakra-ui/react'
 import { MdArrowBack } from 'react-icons/md'
 import { useRouter } from 'next/router'
+import fetchFeatureToggle from '../utils/fetchFeatureToggle'
 
 interface Props {
   experience: Array<IExperience>
@@ -32,11 +33,19 @@ const ResumeNavigation = ({ router }: any) => {
 }
 
 export async function getStaticProps() {
-  return {
-    props: {
-      experience: experienceData,
-      projects: projectsData,
-    },
+  const { enableResumePage } = fetchFeatureToggle()
+
+  if (enableResumePage) {
+    return {
+      props: {
+        experience: experienceData,
+        projects: projectsData,
+      },
+    }
+  } else {
+    return {
+      notFound: true,
+    }
   }
 }
 
