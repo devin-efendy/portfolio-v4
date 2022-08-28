@@ -11,12 +11,6 @@ const Experience = ({
     <Box id={id}>
       <Flex fontSize='xl' flexDirection={['column', 'row']}>
         <Text fontWeight='bold'>{projectName}</Text>
-        {/* <Text fontWeight='bold' mx={[0, 2]} display={['none', 'flex']}>
-          &middot;
-        </Text>
-        <Text color='gray.500' fontWeight='semibold'>
-          {companyName}
-        </Text> */}
       </Flex>
 
       <Text as='p' my={6} textAlign='justify'>

@@ -14,8 +14,10 @@ import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import { IoIosPaper } from 'react-icons/io'
 import { useRouter } from 'next/router'
+import { useFeatureToggle } from '../../context/featureToggle'
 
 const About = () => {
+  const { enableResumePage } = useFeatureToggle()
   const router = useRouter()
 
   const buttonVariant = 'outline'
@@ -90,15 +92,17 @@ const About = () => {
               Contact
             </Button>
           </Link>
-          <Button
-            id='contact-me--button'
-            colorScheme='teal'
-            leftIcon={<Icon as={IoIosPaper} w={5} h={5} />}
-            onClick={() => router.push('/resume')}
-            variant={buttonVariant}
-          >
-            Resume
-          </Button>
+          {enableResumePage && (
+            <Button
+              id='contact-me--button'
+              colorScheme='teal'
+              leftIcon={<Icon as={IoIosPaper} w={5} h={5} />}
+              onClick={() => router.push('/resume')}
+              variant={buttonVariant}
+            >
+              Resume
+            </Button>
+          )}
         </Flex>
       </Flex>
       <Center
