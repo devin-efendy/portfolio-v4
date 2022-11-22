@@ -51,7 +51,7 @@ const About = () => {
           and distributed systems.
         </Text>
         <Text mt={4} mb={8} fontWeight='bold'>
-          I'm currently looking for a Software Developer role!
+          I&apos;m currently looking for a Software Developer role!
         </Text>
         <Flex gap={3} wrap='wrap'>
           <Link
