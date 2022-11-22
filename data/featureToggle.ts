@@ -1,3 +1,3 @@
 export const featureToggle = {
-  enableResumePage: false
+  enableResumePage: false,
 }
