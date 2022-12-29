@@ -80,19 +80,19 @@ const About = () => {
           development, cloud, and distributed systems. (I&apos;m excited to
           explore other areas too!)
         </Text>
-        <Flex gap={3} mt={10} wrap='wrap'>
+        <Flex gap={4} mt={10} wrap='wrap'>
           <Link
             href='https://github.com/devin-efendy'
             isExternal
             _hover={{ textDecoration: 'none' }}
           >
             <Button
+              p={3}
               id='github--button'
               colorScheme='purple'
               variant={buttonVariant}
-              leftIcon={<Icon as={FaGithub} w={5} h={5} />}
             >
-              GitHub
+              <Icon as={FaGithub} w={5} h={5} />
             </Button>
           </Link>
           <Link
@@ -101,12 +101,12 @@ const About = () => {
             _hover={{ textDecoration: 'none' }}
           >
             <Button
+              p={3}
               id='linkedin--button'
               colorScheme='linkedin'
               variant={buttonVariant}
-              leftIcon={<Icon as={FaLinkedinIn} w={5} h={5} />}
             >
-              LinkedIn
+              <Icon as={FaLinkedinIn} w={5} h={5} />
             </Button>
           </Link>
           <Link
@@ -114,12 +114,12 @@ const About = () => {
             _hover={{ textDecoration: 'none' }}
           >
             <Button
+              p={3}
               id='contact-me--button'
               colorScheme='yellow'
-              leftIcon={<Icon as={MdEmail} w={5} h={5} />}
               variant={buttonVariant}
             >
-              Contact
+              <Icon as={MdEmail} w={5} h={5} />
             </Button>
           </Link>
           {enableResumePage && (
