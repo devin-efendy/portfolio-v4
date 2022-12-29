@@ -15,6 +15,36 @@ import { MdEmail } from 'react-icons/md'
 import { IoIosPaper } from 'react-icons/io'
 import { useRouter } from 'next/router'
 import { useFeatureToggle } from '../../context/featureToggle'
+import styled, { keyframes } from 'styled-components'
+
+// source: https://codepen.io/jakejarvis/pen/pBZWZw
+const waveHand = keyframes`
+  0% { transform: rotate( 0.0deg) }
+  10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+  20% { transform: rotate(-8.0deg) }
+  30% { transform: rotate(14.0deg) }
+  40% { transform: rotate(-4.0deg) }
+  50% { transform: rotate(10.0deg) }
+  60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+`
+
+const WaveHandEmoji = styled.span`
+  display: inline-block;
+  animation ${waveHand} 2.5s linear infinite;
+  transform-origin: 70% 70%;
+`
+
+const GradientText = styled.span`
+  background: -webkit-linear-gradient(135deg, #ea5455 10%, #feb692 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`
+
+const ImageWrapper = styled(Box)`
+  background: -webkit-linear-gradient(135deg, #485461 10%, #28313b 40%);
+  // background: linear-gradient(135deg, #485461 10%, #28313b 40%);
+`
 
 const About = () => {
   const { enableResumePage } = useFeatureToggle()
@@ -30,30 +60,27 @@ const About = () => {
       p={['40px', null, null, null, 0]}
     >
       <Flex direction='column' maxWidth='600px'>
-        <Heading as='h1' mb='24px'>
-          Hi 👋, I&apos;m Devin Efendy!
+        <Heading as='h1' fontWeight='bold' mb={2}>
+          Hi <WaveHandEmoji>👋</WaveHandEmoji>, my name is Devin Efendy!
         </Heading>
-        <Heading
-          mb='36px'
-          color='gray.500'
-          size='md'
-          fontWeight='semibold'
-          letterSpacing='wide'
-        >
-          Software Developer
+        <Heading as='h2' fontSize={24} mb={8} fontWeight='bold'>
+          <GradientText>Software Developer</GradientText>
         </Heading>
-        <Text as='p' color='gray.700' textAlign='justify'>
-          I&apos;m a final year Computer Science Honours (Co-op) student at the
-          University of Manitoba and will be graduating in December 2022. I am
-          very passionate about tech and I like to build things with it. Through
-          multiple co-op terms, I gained industry experience in building
-          full-stack web applications. My areas of interest are web development
-          and distributed systems.
-        </Text>
-        <Text mt={4} mb={8} fontWeight='bold'>
+
+        <Text mb={6} fontWeight='bold' fontSize='xl'>
           I&apos;m currently looking for a Software Developer role!
         </Text>
-        <Flex gap={3} wrap='wrap'>
+
+        <Text as='p'>
+          I am very passionate about tech and I like to build things with it. I
+          graduated from the University of Manitoba with a Bachelor of Computer
+          Science Honors (Co-op). Through multiple co-op terms, I gained
+          industry experience in building full-stack web applications using
+          various technology stacks. My areas of interest are full-stack web
+          development, cloud, and distributed systems. (I&apos;m excited to
+          explore other areas too!)
+        </Text>
+        <Flex gap={3} mt={10} wrap='wrap'>
           <Link
             href='https://github.com/devin-efendy'
             isExternal
@@ -110,17 +137,17 @@ const About = () => {
       </Flex>
       <Center
         display={['none', null, null, null, 'flex']}
-        ml={[0, null, null, '3rem', '10rem']}
+        ml={[0, null, null, '3rem', '5rem']}
         mt={['4rem', 0]}
       >
-        <Box borderRadius='full' borderColor='twitter.400' borderWidth='5px'>
+        <ImageWrapper borderRadius='full' padding={2}>
           <Image
             alt='Devin Efendy profile image'
             boxSize='300px'
             borderRadius='full'
             src='/about-img-sqr.png'
           />
-        </Box>
+        </ImageWrapper>
       </Center>
     </Center>
   )
