@@ -54,12 +54,13 @@ const About = () => {
 
   return (
     <Center
+      id='about'
       className='profile--section'
       flexDirection={['column', null, null, null, 'row']}
       height='100vh'
       p={['40px', null, null, null, 0]}
     >
-      <Flex direction='column' maxWidth='600px'>
+      <Flex direction='column' maxWidth='400px'>
         <Heading as='h1' fontWeight='bold' mb={2}>
           Hi <WaveHandEmoji>👋</WaveHandEmoji>, my name is Devin Efendy!
         </Heading>

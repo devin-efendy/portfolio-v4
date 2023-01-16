@@ -1,9 +1,9 @@
 import type { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'
-import theme from '../theme'
 import Head from 'next/head'
 import fetchFeatureToggle from '../utils/fetchFeatureToggle'
 import { FeatureToggleProvider } from '../context/featureToggle'
+import theme from '../theme'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const featureToggles = fetchFeatureToggle()

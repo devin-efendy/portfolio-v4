@@ -1,22 +1,20 @@
 import type { NextPage } from 'next'
-import { About } from '../components'
-import experienceData from '../../data/experience'
-
-export async function getStaticProps() {
-  return {
-    props: {
-      experience: experienceData,
-    },
-  }
-}
+import { About, Experience, Projects, Sidebar, Skills } from '../components'
+import { Box, Flex } from '@chakra-ui/react'
 
 const Home: NextPage = () => {
   return (
-    <div className='container'>
+    <Flex id='body-container' flexDir='row'>
       <main className='main'>
-        <About />
+        <Sidebar sections={['about', 'experience', 'skills', 'projects']} />
+        <Box ml='300px'>
+          <About />
+          <Experience />
+          <Skills />
+          <Projects />
+        </Box>
       </main>
-    </div>
+    </Flex>
   )
 }
 
