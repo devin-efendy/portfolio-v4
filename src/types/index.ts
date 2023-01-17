@@ -1,11 +1,11 @@
-export interface IExperience {
+export interface IJobEntry {
   id: string
   position: string
   companyName: string
   date: string
   description: string
+  bullets: string[]
   location: string
-  technologies: string
 }
 
 export interface IProject {

@@ -7,7 +7,7 @@ export default function Document() {
         <meta name='description' content='Devin Efendy Portfolio' />
         <link rel='icon' href='/favicon.png' />
       </Head>
-      <body>
+      <body style={{ background: '#191919' }}>
         <Main />
         <NextScript />
       </body>
