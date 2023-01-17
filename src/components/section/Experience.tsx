@@ -27,6 +27,7 @@ const hideOverflowScrollbarCSS = css({
     display: 'none',
     height: 0,
   },
+  '-webkit-appearance': 'none',
   '-webkit-overflow-scrolling': 'touch',
   border: '0 none',
 })
@@ -88,13 +89,13 @@ const Experience = ({ experience }: { experience: IJobEntry[] }) => {
           <Tabs colorScheme='orange' variant='soft-rounded'>
             <TabList
               maxW={{ base: '100%', md: '100%' }}
-              overflowX='scroll'
               css={hideOverflowScrollbarCSS}
+              overflowX='auto'
             >
               {filteredExperience.map((job) => (
                 <motion.div key={job.id} variants={childVariant}>
                   <Tab>
-                    <Text color='gray.500' fontSize={16} whiteSpace='nowrap'>
+                    <Text fontSize={16} whiteSpace='nowrap'>
                       {job.companyName}
                     </Text>
                   </Tab>
