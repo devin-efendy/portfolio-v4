@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import { IconType } from 'react-icons'
+import { motion } from 'framer-motion'
 
 const StyledLink = styled(Link)`
   :hover {
@@ -11,6 +12,18 @@ const StyledLink = styled(Link)`
     color: white;
   }
 `
+
+const rootVariants = {
+  onRender: {
+    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+  },
+}
+
+const childVariants = {
+  onRender: {
+    opacity: 1,
+  },
+}
 
 const iconSize = 4
 
@@ -34,7 +47,9 @@ function SidebarLink({
       mb={4}
       onClick={onClick}
     >
-      {children}
+      <motion.div initial={{ opacity: 0 }} variants={childVariants}>
+        {children}
+      </motion.div>
     </StyledLink>
   )
 }
@@ -50,10 +65,12 @@ function SocialLink({
 }) {
   return (
     <StyledLink href={href} target='_blank' color='gray.400'>
-      <Flex alignItems='center' fontSize={14}>
-        <Icon as={icon} w={iconSize} h={iconSize} mr={2} />
-        {text}
-      </Flex>
+      <motion.div initial={{ opacity: 0 }} variants={childVariants}>
+        <Flex alignItems='center' fontSize={14}>
+          <Icon as={icon} w={iconSize} h={iconSize} mr={2} />
+          {text}
+        </Flex>
+      </motion.div>
     </StyledLink>
   )
 }
@@ -96,52 +113,56 @@ function Sidebar({ sections }: { sections: string[] }) {
       px={12}
       bg='sidebar.bg'
     >
-      <Box width='100%' my={12} mb={14}>
-        <Image
-          margin='auto'
-          alt='Devin Efendy profile image'
-          boxSize='70px'
-          src='/favicon.png'
-        />
-      </Box>
-      <Flex id='section-links-group' flexDir='column' mb={14}>
-        {sections.map((section) => {
-          return (
-            <SidebarLink
-              key={section}
-              href={section}
-              active={section === activeLink}
-              onClick={() => {
-                const targetSection = document.querySelector(`#${section}`)
-                targetSection?.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start',
-                })
-                setActiveLink(section)
-              }}
-            >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
-            </SidebarLink>
-          )
-        })}
-      </Flex>
-      <Flex id='social-links-group' flexDir='column' gap='4'>
-        <SocialLink
-          href='https://github.com/devin-efendy'
-          icon={FaGithub}
-          text='@devin-efendy'
-        />
-        <SocialLink
-          href='https://www.linkedin.com/in/devinefendy/'
-          icon={FaLinkedinIn}
-          text='/in/devinefendy'
-        />
-        <SocialLink
-          href='mailto:devinefendy.dev@gmail.com'
-          icon={MdEmail}
-          text='devinefendy.dev@gmail.com'
-        />
-      </Flex>
+      <motion.div variants={rootVariants} animate='onRender'>
+        <motion.div initial={{ opacity: 0 }} variants={childVariants}>
+          <Box width='100%' my={12} mb={14}>
+            <Image
+              margin='auto'
+              alt='Devin Efendy profile image'
+              boxSize='70px'
+              src='/favicon.png'
+            />
+          </Box>
+        </motion.div>
+        <Flex id='section-links-group' flexDir='column' mb={14}>
+          {sections.map((section) => {
+            return (
+              <SidebarLink
+                key={section}
+                href={section}
+                active={section === activeLink}
+                onClick={() => {
+                  const targetSection = document.querySelector(`#${section}`)
+                  targetSection?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                  })
+                  setActiveLink(section)
+                }}
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </SidebarLink>
+            )
+          })}
+        </Flex>
+        <Flex id='social-links-group' flexDir='column' gap='4'>
+          <SocialLink
+            href='https://github.com/devin-efendy'
+            icon={FaGithub}
+            text='@devin-efendy'
+          />
+          <SocialLink
+            href='https://www.linkedin.com/in/devinefendy/'
+            icon={FaLinkedinIn}
+            text='/in/devinefendy'
+          />
+          <SocialLink
+            href='mailto:devinefendy.dev@gmail.com'
+            icon={MdEmail}
+            text='devinefendy.dev@gmail.com'
+          />
+        </Flex>
+      </motion.div>
     </Box>
   )
 }
