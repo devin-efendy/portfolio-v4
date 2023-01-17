@@ -13,6 +13,9 @@ export interface IProject {
   projectName: string
   description: string
   technologies: string
+  imageUrl?: string
+  demoUrl: string
+  githubUrl: string
 }
 
 export interface IEducationItem {

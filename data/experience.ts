@@ -68,7 +68,7 @@ const experience = [
     description:
       'Courses: Programming Practices (C), Data Structures and Algorithms (Java), Operating Systems (C/C++)',
     bullets: [
-      'Automated major marking processes using Python and Bash scripts, reducing marking time per student',
+      'Automated major marking processes using Python, Bash scripts, and regular expressions. Reducing marking time from 7 to 3 minutes per student',
       'Conducted lab sessions and assisted students to understand course materials (C, Unix, debugging, best practices)',
       'Courses: Programming Practices (C), Data Structures and Algorithms (Java), Operating Systems (C/C++)',
     ],

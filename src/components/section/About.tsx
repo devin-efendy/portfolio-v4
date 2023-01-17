@@ -1,9 +1,43 @@
-import { Box, Center, Flex, Grid, Heading, Image, Text } from '@chakra-ui/react'
+import {
+  Center,
+  Flex,
+  Grid,
+  Heading,
+  Image,
+  Text,
+  theme,
+} from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
-const ImageWrapper = styled(Box)`
-  background: -webkit-linear-gradient(135deg, #485461 10%, #28313b 40%);
+const ImageWrapper = styled.div`
+  position: relative;
+
+  ::before,
+  .profile-image-decor {
+    content: '';
+    position: absolute;
+    z-index: -1;
+  }
+
+  .image-decor-0 {
+    border-width: 3px 0 0 3px;
+    border-style: solid;
+    border-color: ${theme.colors.gray[400]};
+    width: 130px;
+    height: 130px;
+    transform: translate(-30px, -30px);
+  }
+
+  ::before {
+    border: 3px solid ${theme.colors.gray[400]};
+    background: none;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    transform: translate(40px, 40px);
+  }
+
+  z-index: 1;
 `
 
 const rootVariants = {
@@ -34,8 +68,6 @@ const About = () => {
       p={2}
       flexDir={{ base: 'column', md: 'row' }}
       minH='100vh'
-      bg='section.bg'
-      color='section.primary'
     >
       <motion.div variants={rootVariants} animate='onRender'>
         <Grid
@@ -47,7 +79,7 @@ const About = () => {
           gridTemplateColumns={{ base: '', md: 'fit-content(800px) 286px' }}
           gap={{ base: 12, md: 0 }}
         >
-          <Flex direction='column' px={8}>
+          <Flex direction='column' px={8} mb={{ sm: 12, md: 0 }}>
             <motion.div initial={childTextInitial} variants={childVariants}>
               <Heading
                 as='h2'
@@ -57,10 +89,10 @@ const About = () => {
               >
                 <Text
                   display='inline'
-                  bgGradient='linear(to-br, #00d4ff 10%, #dc00ff)'
+                  bgGradient='linear(to-r, #00d4ff, #587fff, #dc00ff)'
                   bgClip='text'
                 >
-                  Software Developer
+                  Software Developer.
                 </Text>
               </Heading>
             </motion.div>
@@ -92,12 +124,14 @@ const About = () => {
 
           <Center>
             <motion.div initial={{ opacity: 0 }} variants={childVariants}>
-              <ImageWrapper borderRadius='full' p={2}>
+              <ImageWrapper id='image-wrapper'>
+                <div className='profile-image-decor image-decor-0' />
                 <Image
                   alt='Devin Efendy profile image'
-                  boxSize={{ sm: '230px', md: '250px', xl: '270px' }}
-                  borderRadius='full'
+                  boxSize={{ sm: '230px', md: '230px', xl: '230px' }}
+                  borderRadius='inherit'
                   src='/about-img-sqr.png'
+                  // src='/LogoDE512.png'
                 />
               </ImageWrapper>
             </motion.div>

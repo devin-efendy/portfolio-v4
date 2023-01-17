@@ -1,17 +1,9 @@
 import { Box, Flex, Icon, Image, Link } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
-import styled from 'styled-components'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import { IconType } from 'react-icons'
 import { motion } from 'framer-motion'
-
-const StyledLink = styled(Link)`
-  :hover {
-    text-decoration: none;
-    color: white;
-  }
-`
 
 const rootVariants = {
   onRender: {
@@ -39,18 +31,22 @@ function SidebarLink({
   onClick: () => void
 }) {
   return (
-    <StyledLink
+    <Link
       id={`${href}-sidebar-link`}
       color={active ? 'gray.100' : 'gray.400'}
       fontSize='lg'
       fontWeight={300}
       mb={4}
       onClick={onClick}
+      _hover={{
+        textDecor: 'none',
+        color: 'white',
+      }}
     >
       <motion.div initial={{ opacity: 0 }} variants={childVariants}>
         {children}
       </motion.div>
-    </StyledLink>
+    </Link>
   )
 }
 
@@ -64,14 +60,22 @@ function SocialLink({
   href: string
 }) {
   return (
-    <StyledLink href={href} target='_blank' color='gray.400'>
+    <Link
+      href={href}
+      target='_blank'
+      color='gray.400'
+      _hover={{
+        textDecor: 'none',
+        color: 'white',
+      }}
+    >
       <motion.div initial={{ opacity: 0 }} variants={childVariants}>
         <Flex alignItems='center' fontSize={14}>
           <Icon as={icon} w={iconSize} h={iconSize} mr={2} />
           {text}
         </Flex>
       </motion.div>
-    </StyledLink>
+    </Link>
   )
 }
 
@@ -109,13 +113,12 @@ function Sidebar({ sections }: { sections: string[] }) {
       position='fixed'
       w='300px'
       h='100vh'
-      py={2}
+      py={16}
       px={12}
-      bg='sidebar.bg'
     >
       <motion.div variants={rootVariants} animate='onRender'>
         <motion.div initial={{ opacity: 0 }} variants={childVariants}>
-          <Box width='100%' my={12} mb={14}>
+          <Box width='100%' mb={14}>
             <Image
               margin='auto'
               alt='Devin Efendy profile image'

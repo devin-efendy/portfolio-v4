@@ -35,7 +35,7 @@ const hideOverflowScrollbarCSS = css({
 const rootVariant = {
   visible: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.15,
       delayChildren: 0.2,
     },
   },
@@ -56,12 +56,11 @@ const Experience = ({ experience }: { experience: IJobEntry[] }) => {
   useEffect(() => {
     if (isInView) {
       controls.start('visible')
-      console.log('is in view: ', isInView)
     }
   }, [controls, isInView])
 
   return (
-    <Center id='experience' bg='section.bg' minH='100vh' p={8} py={16}>
+    <Center id='experience' minH='100vh' p={8} py={16}>
       <motion.div
         ref={container}
         animate={controls}
