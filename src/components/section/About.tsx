@@ -55,7 +55,11 @@ const About = () => {
                 mb={5}
                 fontWeight='bold'
               >
-                <Text bgGradient='linear(to-l, #dc00ff, #00d4ff)' bgClip='text'>
+                <Text
+                  display='inline'
+                  bgGradient='linear(to-br, #00d4ff 10%, #dc00ff)'
+                  bgClip='text'
+                >
                   Software Developer
                 </Text>
               </Heading>

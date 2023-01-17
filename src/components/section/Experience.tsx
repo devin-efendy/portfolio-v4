@@ -60,7 +60,7 @@ const Experience = ({ experience }: { experience: IJobEntry[] }) => {
   }, [controls, isInView])
 
   return (
-    <Center id='experience' bg='section.bg' minH='100vh' p={8}>
+    <Center id='experience' bg='section.bg' minH='100vh' p={8} py={16}>
       <motion.div
         ref={container}
         animate={controls}
@@ -77,7 +77,7 @@ const Experience = ({ experience }: { experience: IJobEntry[] }) => {
             >
               <Text
                 display='inline'
-                bgGradient='linear(to-br,#F6AD55 35%, #7928CA)'
+                bgGradient='linear(to-br,#F6AD55 45%, #F03801)'
                 bgClip='text'
               >
                 Experience
