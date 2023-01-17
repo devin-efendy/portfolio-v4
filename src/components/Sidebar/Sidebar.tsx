@@ -15,7 +15,7 @@ const StyledLink = styled(Link)`
 
 const rootVariants = {
   onRender: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.1, delayChildren: 1 },
   },
 }
 

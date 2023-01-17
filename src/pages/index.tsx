@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import { About, Experience, Projects, Sidebar, Skills } from '../components'
 import { Box } from '@chakra-ui/react'
+import dynamic from 'next/dynamic'
 
 const Home: NextPage = () => {
   return (
