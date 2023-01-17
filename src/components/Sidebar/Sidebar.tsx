@@ -1,4 +1,4 @@
-import { Box, Flex, Icon, Image, Link, theme } from '@chakra-ui/react'
+import { Box, Flex, Icon, Image, Link } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
@@ -8,7 +8,7 @@ import { IconType } from 'react-icons'
 const StyledLink = styled(Link)`
   :hover {
     text-decoration: none;
-    color: ${theme.colors.gray[100]};
+    color: white;
   }
 `
 
@@ -87,6 +87,7 @@ function Sidebar({ sections }: { sections: string[] }) {
 
   return (
     <Box
+      display={{ base: 'none', xl: 'block' }}
       id='sidebar'
       position='fixed'
       w='300px'

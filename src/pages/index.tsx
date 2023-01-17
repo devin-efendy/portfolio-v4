@@ -1,20 +1,20 @@
 import type { NextPage } from 'next'
 import { About, Experience, Projects, Sidebar, Skills } from '../components'
-import { Box, Flex } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 
 const Home: NextPage = () => {
   return (
-    <Flex id='body-container' flexDir='row'>
+    <Box id='body-container'>
+      <Sidebar sections={['about', 'experience', 'skills', 'projects']} />
       <main className='main'>
-        <Sidebar sections={['about', 'experience', 'skills', 'projects']} />
-        <Box ml='300px'>
+        <Box ml={{ base: '0', xl: '300px' }}>
           <About />
           <Experience />
           <Skills />
           <Projects />
         </Box>
       </main>
-    </Flex>
+    </Box>
   )
 }
 
