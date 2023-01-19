@@ -1,15 +1,4 @@
 const experience = [
-  // {
-  //   id: 'priceline--01',
-  //   position: 'Software Developer Co-op',
-  //   companyName: 'Priceline',
-  //   date: 'May 2022 – Dec 2022',
-  //   description:
-  //     "I was primarily working on integrating Okta authentication and authorization for my team's new application to protect pages and APIs. This also allow users to have seamless transition between Priceline's applications through SSO. I also improved autocomplete functionality for one of Priceline's partner which provides better usability and support custom dictionaries. Lastly, I organized and hosted company-wide technology showcase event with 150+ attendees",
-  //   location: 'Winnipeg, MB (remote)',
-  //   technologies:
-  //     'TypeScript, React, Node.js, Remix, GraphQL, Jest, React Testing Library',
-  // },
   {
     id: 'priceline--00',
     position: 'Software Developer Co-op',
@@ -19,14 +8,24 @@ const experience = [
       "Worked on Next.js application to unify landing pages of Priceline's products. This involves building React components, writing tests, and using feature toggles and CMS. In addition to that, I built a GitHub Action that sends alerts to a Slack channel about the progress of Contentful migrations.",
     bullets: [
       'Spearheaded Okta integration for a new web app by creating Express auth middleware and token management using TypeScript and Node.js',
-      "Built landing page templates for 3 products of different codebases and unified them in a single Next.js application, simplifying maintenance of partner's landing pages (TypeScript, React, Node.js, Express, Jest, React Testing Library)",
+      "Built landing page templates for 3 products of different codebases and unified them in a single Next.js application, simplifying maintenance of partner's landing pages",
       'Improved locations autocomplete to reduce time spent searching for locations and provide better usability',
       'Created and improved core UI components for Priceline’s open-source component library using React, CSS, and Storybook',
       'Organized, coordinated, and hosted a company-wide technology showcase event with 170+ attendees',
     ],
     location: 'Winnipeg, MB (remote)',
-    technologies:
-      'TypeScript, React, Node.js, Next.js, HTML, CSS, Jest, React Testing Library, Contentful, LaunchDarkly, GitHub Action',
+    technologies: [
+      'ts',
+      'react',
+      'node',
+      'express',
+      'next',
+      'gcp',
+      'okta',
+      'jest',
+      'testinglibrary',
+      'storybook',
+    ],
   },
   {
     id: 'ubisoft-00',
@@ -41,7 +40,7 @@ const experience = [
       'Identified and fixed various UI bugs in the desktop application, improving user experience',
     ],
     location: 'Winnipeg, MB (remote)',
-    technologies: 'C#, .NET, .NET Core, PostgreSQL, WPF, OOP, REST API',
+    technologies: ['csharp', 'dotnet', 'postgresql', 'cpp', 'unity'],
   },
   {
     id: 'bold-commerce--00',
@@ -57,8 +56,17 @@ const experience = [
       'Tested, debugged, and updated API endpoints across e-commerce platforms such as Shopify and BigCommerce, increasing feature parity',
     ],
     location: 'Winnipeg, MB (remote)',
-    technologies:
-      'PHP, Laravel, JavaScript, React, Node.js, MySQL, Docker, OOP',
+    technologies: [
+      'php',
+      'laravel',
+      'js',
+      'react',
+      'redux',
+      'node',
+      'express',
+      'mysql',
+      'docker',
+    ],
   },
   {
     id: 'uofm--00',
@@ -73,8 +81,7 @@ const experience = [
       'Courses: Programming Practices (C), Data Structures and Algorithms (Java), Operating Systems (C/C++)',
     ],
     location: 'Winnipeg, MB (remote)',
-    technologies:
-      'PHP, Laravel, JavaScript, React, Node.js, MySQL, Docker, OOP',
+    technologies: ['java', 'cpp'],
   },
 ]
 

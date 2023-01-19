@@ -11,12 +11,14 @@ import styled from 'styled-components'
 import { IProject } from '../../types'
 import { FaGithubAlt } from 'react-icons/fa'
 import { VscLinkExternal } from 'react-icons/vsc'
+import techIcons from '../TechIcons'
+import IconSet from '../IconSet'
 
 const ProjectContainer = styled.div`
   --default-bg: ${theme.colors.gray[600]};
 
   width: 300px;
-  height: 300px;
+  height: 330px;
 
   border-radius: 12px;
   background: ${theme.colors.gray[600]};
@@ -48,14 +50,6 @@ const ProjectContainer = styled.div`
     :before {
       background-position: 0%;
     }
-
-    h2 {
-      color: ${theme.colors.gray[200]};
-    }
-
-    p {
-      color: ${theme.colors.gray[300]};
-    }
   }
 
   z-index: 1;
@@ -74,6 +68,10 @@ const ProjectContent = styled(Box)`
   .link-icons-group > a {
     opacity: 0;
     transform: translateY(30px);
+
+    &:hover {
+      transform: translateY(-4px) !important;
+    }
   }
 
   &:hover {
@@ -89,17 +87,17 @@ const ProjectContent = styled(Box)`
     p {
       color: ${theme.colors.gray[300]};
     }
-  }
 
-  .link-icons-group > a {
-    &:hover {
-      transform: translateY(-4px) !important;
+    .tech-icons svg {
+      color: ${theme.colors.gray[300]};
     }
   }
 `
 
 const ProjectEntry = ({ entry }: { entry: IProject }) => {
-  const { projectName, description, demoUrl, githubUrl } = entry
+  const { projectName, description, demoUrl, githubUrl, technologies } = entry
+  const icons = technologies.map((tech) => techIcons[tech])
+
   const cardContentColor = 'gray.500'
 
   return (
@@ -113,50 +111,50 @@ const ProjectEntry = ({ entry }: { entry: IProject }) => {
           >
             {projectName}
           </Heading>
+
+          <Box className='tech-icons' my={6}>
+            <IconSet icons={icons} fontSize={24} gap={3} />
+          </Box>
+
           <Text
             as='p'
             color={cardContentColor}
-            mt={5}
             noOfLines={5}
             transition='color 200ms'
           >
             {description}
           </Text>
 
-          <Flex
-            className='link-icons-group'
-            gap={4}
-            alignSelf='flex-end'
-            marginTop='auto'
-            color='gray.500'
-            alignItems='center'
-          >
-            {githubUrl && (
-              <Link href={githubUrl} target='_blank'>
-                <IconButton
-                  _hover={{
-                    color: theme.colors.pink[500],
-                  }}
-                  boxSize={8}
-                  variant='none'
-                  as={FaGithubAlt}
-                  aria-label='Go to GitHub repository'
-                />
-              </Link>
-            )}
-            {demoUrl && (
-              <Link href={demoUrl} target='_blank'>
-                <IconButton
-                  _hover={{
-                    color: '#f6ad55',
-                  }}
-                  boxSize={7}
-                  variant='none'
-                  as={VscLinkExternal}
-                  aria-label='Go to Demo page'
-                />
-              </Link>
-            )}
+          <Flex marginTop='auto' alignItems='center' justifyContent='flex-end'>
+            <Flex
+              className='link-icons-group'
+              color='gray.500'
+              alignItems='center'
+              gap={2}
+            >
+              {githubUrl && (
+                <Link href={githubUrl} target='_blank'>
+                  <IconButton
+                    color={`${theme.colors.pink[500]}`}
+                    boxSize={8}
+                    variant='none'
+                    as={FaGithubAlt}
+                    aria-label='Go to GitHub repository'
+                  />
+                </Link>
+              )}
+              {demoUrl && (
+                <Link href={demoUrl} target='_blank'>
+                  <IconButton
+                    color='#f6ad55'
+                    boxSize={7}
+                    variant='none'
+                    as={VscLinkExternal}
+                    aria-label='Go to Demo page'
+                  />
+                </Link>
+              )}
+            </Flex>
           </Flex>
         </Flex>
       </ProjectContent>

@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 import { motion, useAnimation, useInView } from 'framer-motion'
 import { useEffect, useRef } from 'react'
-import JobEntry from '../../JobEntry'
+import JobEntry from '../JobEntry'
 import { IJobEntry } from '../../types'
 
 const hideOverflowScrollbarCSS = css({

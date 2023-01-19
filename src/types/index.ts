@@ -6,13 +6,14 @@ export interface IJobEntry {
   description: string
   bullets: string[]
   location: string
+  technologies: string[]
 }
 
 export interface IProject {
   id: string
   projectName: string
   description: string
-  technologies: string
+  technologies: string[]
   imageUrl?: string
   demoUrl: string
   githubUrl: string
