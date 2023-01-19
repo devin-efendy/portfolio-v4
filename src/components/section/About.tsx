@@ -1,154 +1,143 @@
 import {
-  Box,
-  Button,
   Center,
   Flex,
+  Grid,
   Heading,
-  Icon,
   Image,
-  Link,
   Text,
+  theme,
 } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
+import styled from 'styled-components'
 
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
-import { MdEmail } from 'react-icons/md'
-import { IoIosPaper } from 'react-icons/io'
-import { useRouter } from 'next/router'
-import { useFeatureToggle } from '../../context/featureToggle'
-import styled, { keyframes } from 'styled-components'
+const ImageWrapper = styled.div`
+  position: relative;
 
-// source: https://codepen.io/jakejarvis/pen/pBZWZw
-const waveHand = keyframes`
-  0% { transform: rotate( 0.0deg) }
-  10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
-  20% { transform: rotate(-8.0deg) }
-  30% { transform: rotate(14.0deg) }
-  40% { transform: rotate(-4.0deg) }
-  50% { transform: rotate(10.0deg) }
-  60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
-  100% { transform: rotate( 0.0deg) }
+  ::before,
+  .profile-image-decor {
+    content: '';
+    position: absolute;
+    z-index: -1;
+  }
+
+  .image-decor-0 {
+    border-width: 3px 0 0 3px;
+    border-style: solid;
+    border-color: ${theme.colors.gray[400]};
+    width: 130px;
+    height: 130px;
+    transform: translate(-30px, -30px);
+  }
+
+  ::before {
+    border: 3px solid ${theme.colors.gray[400]};
+    background: none;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    transform: translate(40px, 40px);
+  }
+
+  z-index: 1;
 `
 
-const WaveHandEmoji = styled.span`
-  display: inline-block;
-  animation ${waveHand} 2.5s linear infinite;
-  transform-origin: 70% 70%;
-`
+const rootVariants = {
+  onRender: {
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.2,
+    },
+  },
+}
 
-const GradientText = styled.span`
-  background: -webkit-linear-gradient(135deg, #ea5455 10%, #feb692 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-`
+const childVariants = {
+  onRender: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
+}
 
-const ImageWrapper = styled(Box)`
-  background: -webkit-linear-gradient(135deg, #485461 10%, #28313b 40%);
-  // background: linear-gradient(135deg, #485461 10%, #28313b 40%);
-`
+const childTextInitial = { y: 30, opacity: 0 }
 
 const About = () => {
-  const { enableResumePage } = useFeatureToggle()
-  const router = useRouter()
-
-  const buttonVariant = 'outline'
-
   return (
     <Center
-      className='profile--section'
-      flexDirection={['column', null, null, null, 'row']}
-      height='100vh'
-      p={['40px', null, null, null, 0]}
+      id='about'
+      p={2}
+      flexDir={{ base: 'column', md: 'row' }}
+      minH='100vh'
     >
-      <Flex direction='column' maxWidth='600px'>
-        <Heading as='h1' fontWeight='bold' mb={2}>
-          Hi <WaveHandEmoji>👋</WaveHandEmoji>, my name is Devin Efendy!
-        </Heading>
-        <Heading as='h2' fontSize={24} mb={8} fontWeight='bold'>
-          <GradientText>Software Developer</GradientText>
-        </Heading>
+      <motion.div variants={rootVariants} animate='onRender'>
+        <Grid
+          p={{ base: 8, md: 0 }}
+          templateAreas={{
+            base: `"about" "profile-image"`,
+            md: `"about profile-image"`,
+          }}
+          gridTemplateColumns={{ base: '', md: 'fit-content(800px) 286px' }}
+          gap={{ base: 12, md: 0 }}
+        >
+          <Flex direction='column' px={8} mb={{ sm: 12, md: 0 }}>
+            <motion.div initial={childTextInitial} variants={childVariants}>
+              <Heading
+                as='h2'
+                fontSize={{ base: 48, xl: 58 }}
+                mb={5}
+                fontWeight='bold'
+              >
+                <Text
+                  display='inline'
+                  bgGradient='linear(to-r, #00d4ff, #587fff, #dc00ff)'
+                  bgClip='text'
+                >
+                  Software Developer.
+                </Text>
+              </Heading>
+            </motion.div>
+            <motion.div initial={childTextInitial} variants={childVariants}>
+              <Text
+                mb={8}
+                color='blue.100'
+                fontWeight='normal'
+                fontSize={32}
+                letterSpacing='3px'
+              >
+                DEVIN EFENDY
+              </Text>
+            </motion.div>
 
-        <Text mb={6} fontWeight='bold' fontSize='xl'>
-          I&apos;m currently looking for a Software Developer role!
-        </Text>
+            <motion.div initial={childTextInitial} variants={childVariants}>
+              <Text
+                as='p'
+                fontSize={{ base: 18, xl: 24 }}
+                fontWeight='light'
+                color='gray.400'
+              >
+                I build things and solve problems with tech. A recent CS
+                graduate with multiple co-ops/internships, working on full-stack
+                applications using various technology stacks.
+              </Text>
+            </motion.div>
+          </Flex>
 
-        <Text as='p'>
-          I am very passionate about tech and I like to build things with it. I
-          graduated from the University of Manitoba with a Bachelor of Computer
-          Science Honors (Co-op). Through multiple co-op terms, I gained
-          industry experience in building full-stack web applications using
-          various technology stacks. My areas of interest are full-stack web
-          development, cloud, and distributed systems. (I&apos;m excited to
-          explore other areas too!)
-        </Text>
-        <Flex gap={4} mt={10} wrap='wrap'>
-          <Link
-            href='https://github.com/devin-efendy'
-            isExternal
-            _hover={{ textDecoration: 'none' }}
-          >
-            <Button
-              p={3}
-              id='github--button'
-              colorScheme='purple'
-              variant={buttonVariant}
-            >
-              <Icon as={FaGithub} w={5} h={5} />
-            </Button>
-          </Link>
-          <Link
-            href='https://www.linkedin.com/in/devinefendy/'
-            isExternal
-            _hover={{ textDecoration: 'none' }}
-          >
-            <Button
-              p={3}
-              id='linkedin--button'
-              colorScheme='linkedin'
-              variant={buttonVariant}
-            >
-              <Icon as={FaLinkedinIn} w={5} h={5} />
-            </Button>
-          </Link>
-          <Link
-            href='mailto:devinefendy.dev@gmail.com'
-            _hover={{ textDecoration: 'none' }}
-          >
-            <Button
-              p={3}
-              id='contact-me--button'
-              colorScheme='yellow'
-              variant={buttonVariant}
-            >
-              <Icon as={MdEmail} w={5} h={5} />
-            </Button>
-          </Link>
-          {enableResumePage && (
-            <Button
-              id='contact-me--button'
-              colorScheme='teal'
-              leftIcon={<Icon as={IoIosPaper} w={5} h={5} />}
-              onClick={() => router.push('/resume')}
-              variant={buttonVariant}
-            >
-              Resume
-            </Button>
-          )}
-        </Flex>
-      </Flex>
-      <Center
-        display={['none', null, null, null, 'flex']}
-        ml={[0, null, null, '3rem', '5rem']}
-        mt={['4rem', 0]}
-      >
-        <ImageWrapper borderRadius='full' padding={2}>
-          <Image
-            alt='Devin Efendy profile image'
-            boxSize='300px'
-            borderRadius='full'
-            src='/about-img-sqr.png'
-          />
-        </ImageWrapper>
-      </Center>
+          <Center>
+            <motion.div initial={{ opacity: 0 }} variants={childVariants}>
+              <ImageWrapper id='image-wrapper'>
+                <div className='profile-image-decor image-decor-0' />
+                <Image
+                  alt='Devin Efendy profile image'
+                  boxSize={{ sm: '230px', md: '230px', xl: '230px' }}
+                  borderRadius='inherit'
+                  src='/about-img-sqr.png'
+                  // src='/LogoDE512.png'
+                />
+              </ImageWrapper>
+            </motion.div>
+          </Center>
+        </Grid>
+      </motion.div>
     </Center>
   )
 }

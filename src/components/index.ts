@@ -1,5 +1,4 @@
 export { default as About } from './section/About'
-export { default as WorkExperience } from './section/WorkExperience'
-export { default as Education } from './section/Education'
-export { default as Skills } from './section/Skills'
+export { default as Experience } from './section/Experience'
 export { default as Projects } from './section/Projects'
+export { default as Sidebar } from './Sidebar/Sidebar'
