@@ -2,7 +2,7 @@ import {
   Box,
   Flex,
   Heading,
-  IconButton,
+  Icon,
   Link,
   Text,
   theme,
@@ -130,14 +130,13 @@ const ProjectEntry = ({ entry }: { entry: IProject }) => {
               className='link-icons-group'
               color='gray.500'
               alignItems='center'
-              gap={2}
+              gap={4}
             >
               {githubUrl && (
                 <Link href={githubUrl} target='_blank'>
-                  <IconButton
+                  <Icon
                     color={`${theme.colors.pink[500]}`}
                     boxSize={8}
-                    variant='none'
                     as={FaGithubAlt}
                     aria-label='Go to GitHub repository'
                   />
@@ -145,10 +144,9 @@ const ProjectEntry = ({ entry }: { entry: IProject }) => {
               )}
               {demoUrl && (
                 <Link href={demoUrl} target='_blank'>
-                  <IconButton
+                  <Icon
                     color='#f6ad55'
                     boxSize={7}
-                    variant='none'
                     as={VscLinkExternal}
                     aria-label='Go to Demo page'
                   />
