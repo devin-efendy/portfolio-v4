@@ -1,12 +1,4 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  Icon,
-  Link,
-  Text,
-  theme,
-} from '@chakra-ui/react'
+import { Box, Flex, Heading, Icon, Link, Text, theme } from '@chakra-ui/react'
 import styled from 'styled-components'
 import { IProject } from '../../types'
 import { FaGithubAlt } from 'react-icons/fa'
