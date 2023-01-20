@@ -66,6 +66,7 @@ const About = () => {
     <Center
       id='about'
       p={2}
+      py={12}
       flexDir={{ base: 'column', md: 'row' }}
       minH='100vh'
     >

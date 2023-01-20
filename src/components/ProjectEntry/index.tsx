@@ -1,12 +1,4 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  IconButton,
-  Link,
-  Text,
-  theme,
-} from '@chakra-ui/react'
+import { Box, Flex, Heading, Icon, Link, Text, theme } from '@chakra-ui/react'
 import styled from 'styled-components'
 import { IProject } from '../../types'
 import { FaGithubAlt } from 'react-icons/fa'
@@ -130,14 +122,13 @@ const ProjectEntry = ({ entry }: { entry: IProject }) => {
               className='link-icons-group'
               color='gray.500'
               alignItems='center'
-              gap={2}
+              gap={4}
             >
               {githubUrl && (
                 <Link href={githubUrl} target='_blank'>
-                  <IconButton
+                  <Icon
                     color={`${theme.colors.pink[500]}`}
                     boxSize={8}
-                    variant='none'
                     as={FaGithubAlt}
                     aria-label='Go to GitHub repository'
                   />
@@ -145,10 +136,9 @@ const ProjectEntry = ({ entry }: { entry: IProject }) => {
               )}
               {demoUrl && (
                 <Link href={demoUrl} target='_blank'>
-                  <IconButton
+                  <Icon
                     color='#f6ad55'
                     boxSize={7}
-                    variant='none'
                     as={VscLinkExternal}
                     aria-label='Go to Demo page'
                   />
