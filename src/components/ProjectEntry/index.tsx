@@ -7,13 +7,10 @@ import techIcons from '../TechIcons'
 import IconSet from '../IconSet'
 
 const ProjectContainer = styled.div`
-  --default-bg: ${theme.colors.gray[600]};
-
   width: 300px;
   height: 330px;
 
   border-radius: 12px;
-  background: ${theme.colors.gray[600]};
   position: relative;
 
   cursor: default;
@@ -25,7 +22,7 @@ const ProjectContainer = styled.div`
       135deg,
       #dc00ff,
       #f6ad55 33%,
-      ${theme.colors.gray[600]} 66%
+      ${theme.colors.gray[500]} 66%
     );
 
     transition: background-position 400ms ease, transform 400ms ease;
@@ -73,24 +70,24 @@ const ProjectContent = styled(Box)`
     }
 
     h2 {
-      color: ${theme.colors.gray[200]};
+      color: ${theme.colors.gray[100]};
     }
 
     p {
-      color: ${theme.colors.gray[300]};
+      color: ${theme.colors.gray[100]};
     }
 
     .tech-icons svg {
-      color: ${theme.colors.gray[300]};
+      color: ${theme.colors.gray[100]};
     }
   }
 `
 
+const cardContentColor = 'gray.400'
+
 const ProjectEntry = ({ entry }: { entry: IProject }) => {
   const { projectName, description, demoUrl, githubUrl, technologies } = entry
   const icons = technologies.map((tech) => techIcons[tech])
-
-  const cardContentColor = 'gray.500'
 
   return (
     <ProjectContainer>
@@ -105,7 +102,12 @@ const ProjectEntry = ({ entry }: { entry: IProject }) => {
           </Heading>
 
           <Box className='tech-icons' my={6}>
-            <IconSet icons={icons} fontSize={24} gap={3} />
+            <IconSet
+              icons={icons}
+              fontSize={24}
+              gap={3}
+              color={cardContentColor}
+            />
           </Box>
 
           <Text
