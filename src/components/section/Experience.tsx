@@ -94,7 +94,7 @@ const Experience = ({ experience }: { experience: IJobEntry[] }) => {
               {filteredExperience.map((job) => (
                 <motion.div key={job.id} variants={childVariant}>
                   <Tab>
-                    <Text fontSize={16} whiteSpace='nowrap'>
+                    <Text fontSize={18} whiteSpace='nowrap'>
                       {job.companyName}
                     </Text>
                   </Tab>

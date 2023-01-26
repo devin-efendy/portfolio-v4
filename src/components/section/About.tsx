@@ -44,7 +44,6 @@ const rootVariants = {
   onRender: {
     transition: {
       staggerChildren: 0.2,
-      delayChildren: 0.2,
     },
   },
 }
@@ -54,7 +53,8 @@ const childVariants = {
     y: 0,
     opacity: 1,
     transition: {
-      y: { stiffness: 1000 },
+      y: { stiffness: 0 },
+      opacity: { duration: 0.4 },
     },
   },
 }

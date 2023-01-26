@@ -82,7 +82,7 @@ const MenuIcon = styled.div`
 
 const rootVariants = {
   onRender: {
-    transition: { staggerChildren: 0.1, delayChildren: 1 },
+    transition: { staggerChildren: 0.15, delayChildren: 1.1 },
   },
 }
 
@@ -200,10 +200,8 @@ function Sidebar({ sections }: { sections: string[] }) {
         borderRight={{ sm: `1px solid ${theme.colors.gray[700]}`, xl: 'none' }}
         visibility={{ sm: isOpen ? 'visible' : 'hidden', xl: 'visible' }}
         opacity={{ sm: isOpen ? 1 : 0, xl: 1 }}
-        // left={{ sm: isOpen ? '0' : '-300px', xl: '0' }}
         id='sidebar'
         position='fixed'
-        // transition='left 300ms'
         transition='opacity 400ms, visibility 400ms'
         w='300px'
         h='100vh'
