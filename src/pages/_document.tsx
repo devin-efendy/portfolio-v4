@@ -16,7 +16,7 @@ function MyDocument() {
         <meta name='description' content='Devin Efendy Portfolio' />
         <link rel='icon' href='/favicon.png' />
       </Head>
-      <body>
+      <body style={{ backgroundColor: '#191919' }}>
         <Main />
         <NextScript />
       </body>
